@@ -172,7 +172,7 @@ function Footer(props:any){
     const {siteData}=props
  return(
     <>
-    <div className="flex" style={{width:"1500px" , margin:"40px", backgroundColor:"black" , color:"white"}}>
+    <div className="flex" style={{width:"1500px" ,height:"200px",margin:"1px",padding:"40px", backgroundColor:"black" , color:"white"}}>
    {siteData.map((res:any)=>{
         return(
             <>

@@ -62,7 +62,7 @@ return(
     {props._site.c_header.map((res:any)=>{
         return(
             <>
-            <div style={{width:"450px", margin:"45px" }}>
+            <div style={{width:"400px", margin:"45px" }}>
             <ul>
               <a href={res.link}>{res.label}</a>
             </ul>
