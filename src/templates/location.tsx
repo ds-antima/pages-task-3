@@ -38,6 +38,7 @@ import StoreHighlight from "../components/locationDetail/SoreHighlight";
 import OpenClose from "../components/commons/openClose";
 import Faq from "../components/locationDetail/Faqs";
 import { StaticData } from "../../sites-global/staticData";
+import Header1 from "../components/layouts/header";
 
 import {apikey_for_entity, baseuRL,stagingBaseurl,AnalyticsEnableDebugging,AnalyticsEnableTrackingCookie, favicon } from "../../sites-global/global";
 import {
@@ -440,6 +441,7 @@ breadcrumbScheme.push({
       >
         {" "}
         <AnalyticsScopeProvider name={""}>
+        <Header1 _site={_site}/>
       <PageLayout global={_site}>
 
 
@@ -477,6 +479,7 @@ breadcrumbScheme.push({
           </div>
           
         </div>
+        <Footer siteData={_site.c_footerServices}/>
 
       </PageLayout>
       </AnalyticsScopeProvider>

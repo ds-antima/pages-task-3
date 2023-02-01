@@ -30,7 +30,7 @@ const Contact = (props: any) => {
         <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4>
 
         <div className="icon-row content-col">
-          <div className="icon">
+          <div className="icon" style={{color:"black"}}>
             {" "}
             <img className=" " src={mapimage} width="20" height="20" alt="mapimage" />
           </div>

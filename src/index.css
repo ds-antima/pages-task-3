@@ -291,7 +291,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .pagination-conatiner{ @apply mt-4}
 .nearby-btn .btn{ @apply !w-full}
 .nearby-card .button-bx{@apply ml-0 lg:ml-0 flex-row justify-start }
-.nearby-card .button-bx .btn{@apply w-[9.75rem] bg-Dark-red hover:bg-hover-btn font-second-main-font py-2.5  border-none text-white  }
+.nearby-card .button-bx .btn{@apply w-[9.75rem] bg-black hover:bg-hover-btn font-second-main-font py-2.5  border-none text-white  }
 .nearby-card .button-bx .btn.notHighligh{@apply w-full md:w-[48%] ml-2 bg-white justify-start  border-none text-black underline  }
 .nearby-card .button-bx .btn + .btn{@apply mt-2 md:mt-0 w-auto hover:no-underline}
 .nearby-card .button-bx .btn:hover svg{@apply !fill-red }
@@ -334,7 +334,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .hero-section .hero-content .banner-text{  @apply border-l-2 border-dashed border-white px-7}
 .hero-section .hero-content h1{  @apply text-3xl md:text-5xl font-normal mb-3}
 .hero-section .hero-content p{@apply max-w-2xl}
-.banner-text h1{ @apply text-red text-[2.4375rem] mb-3  mt-8 font-second-main-font}
+.banner-text h1{ @apply text-black text-[2.4375rem] mb-3  mt-8 font-second-main-font}
 
 /* address sec */
 .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[87.5rem] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11}
@@ -360,7 +360,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .opennow-sec .icons{@apply min-w-[0.75rem] sm:min-w-[1.25rem] mr-1 sm:mr-1}
 .opennow-sec .icons img{@apply w-5 sm:w-5}
 .direction-button{@apply mt-6 }
-.direction-button a{@apply  !bg-Dark-red !text-white  !border-button-light hover:!border-transparent !border-2 }
+.direction-button a{@apply  !bg-black !text-white  !border-button-light hover:!border-transparent !border-2 }
 .direction-button .btn:hover svg{@apply !fill-red }
 .opennow-sec.deactive-feci{@apply opacity-70 text-red }
 .address-main-sec .button-bx{  @apply mt-5 justify-start ml-0 md:ml-0}
@@ -402,7 +402,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 /* services sec */
 .services-sec{@apply bg-white w-full pt-8 pb-16 md:py-9 }
 .sec-title{@apply mb-4 md:mb-7}
-.sec-title h2, .sec-title h1{@apply text-center text-2xl font-second-main-font md:text-[1.75rem] text-red  }
+.sec-title h2, .sec-title h1{@apply text-center text-2xl font-second-main-font md:text-[1.75rem] text-black  }
 .sec-title h1{@apply mb-5}
 .services-inner{@apply flex flex-wrap  }
 .services-inner .service-icon{@apply  m-0 }
