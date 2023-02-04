@@ -1,7 +1,7 @@
 import * as React from "react";
 import Footer from "./footer";
 import Nav from "./Nav";
-
+import PhotoSlider from "../locationDetail/PhotoSlider"
 type Props = {
     title?: string;
     _site?: any;
@@ -17,7 +17,8 @@ type Props = {
   }: Props) => {
     return (
         <>
-      
+        
+      <PhotoSlider photoGallery={global.c_headerbanner} />
                 {children}
       
         </>

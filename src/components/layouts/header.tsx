@@ -70,7 +70,7 @@ return(
             </>
             )
         })}
-        <a className="logo" href="\">
+        <a className="logo" href="\" style={{width:"550px"}}>
         <img src={props._site.c_headerphoto.url}/></a>
         </div>
     </>
