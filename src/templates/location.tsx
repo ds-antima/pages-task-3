@@ -568,7 +568,7 @@ const Location: Template<ExternalApiRenderData> = ({
                             backgroundColor: "black",
                             padding: "18px",
                             border: "yellow",
-                            border: "2px solid #f1d7b1",
+                          //  border: "2px solid #f1d7b1",
                             borderRadius: "10px",
                             margin: "10px",
                             marginLeft: "60px",
