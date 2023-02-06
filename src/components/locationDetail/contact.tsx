@@ -27,7 +27,7 @@ const Contact = (props: any) => {
   return (
     <>
       <div className="address-main-sec">
-        <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4>
+        <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Restaurant Details"}</h4>
 
         <div className="icon-row content-col">
           <div className="icon" style={{color:"black"}}>

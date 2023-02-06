@@ -229,7 +229,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           name: "twitter:title",
           content: document.c_meta_title
             ? document.c_meta_title
-            : `${document.name} Store of MGM Timber`,
+            : `${document.name} restaurant near me`,
         },
       },
       // {

@@ -58,7 +58,7 @@ export default function Header1(props:any){
 
 return(
     <>
-    <div className="flex flex-row" style={{width:"1500px",backgroundColor:"black",color:"white"}}>
+    <div className="flex flex-row" style={{width:"1500px",backgroundColor:"black",color:"white",padding: "21px"}}>
     {props._site.c_header.map((res:any)=>{
         return(
             <>

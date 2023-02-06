@@ -8,6 +8,7 @@ import Address from "../commons/Address";
 import OpenClose from "../commons/openClose";
 import { StaticData } from "../../../sites-global/staticData";
 import { Link } from "@yext/pages/components";
+import Servicess from "../locationDetail/services";
 
 
 const metersToMiles = (meters: number) => {
@@ -107,6 +108,7 @@ function opentime(e: any) {
                    </div>}
 
             </div>
+            <Servicess service={result.rawData.c_servicesss} />
          
              <div className="button-bx">
               <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
@@ -120,10 +122,11 @@ function opentime(e: any) {
               {result.rawData.displayCoordinate ?
                 <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
                 : <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
+                
             </div>
           
          
-
+            
           </div>
 
         </div>
