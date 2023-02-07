@@ -60,6 +60,7 @@ import FeaturesBrand from "../components/locationDetail/FeaturesBrand";
 import { Fade, Slide } from "react-awesome-reveal";
 import MgmTimber from "../components/locationDetail/MgmTimber";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
+import { ClimbingBoxLoader } from "react-spinners";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -257,11 +258,12 @@ export const transformProps: TransformProps<ExternalApiData> = async (
       : data.document.displayCoordinate.longitude
   }`;
 
-  const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=4&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
+  const url = "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?api_key=ae1f0a5b0056b4aaae9bdf3238d19bf9&v=20230110&location=India&radius=2500&limit=3&offset=0";
   console.log(url);
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
   )) as nearByLocation;
+  console.log(externalApiData,"externalApiData")
   return { ...data, externalApiData };
 };
 
@@ -298,7 +300,7 @@ const Location: Template<ExternalApiRenderData> = ({
     c_servicesss,
     c_aboutus,
   } = document;
-
+console.log("externalApiData",externalApiData)
   let templateData = { document: document, __meta: __meta };
   let hoursSchema = [];
   let breadcrumbScheme = [];

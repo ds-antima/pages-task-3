@@ -72,11 +72,11 @@ return(
         return(
             <>
             
-            <div style={{}}>
+            <div style={{width:"100%",textAlign:"center"}}>
               
       
-      <Accordion style={{ width: "80%",margin:"20px",backgroundColor:"grey",textAlign:"center"}}>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}aria-controls="panel1a-content" style={{borderBottom:"1px solid #6c4e25" }}>
+      <Accordion style={{ width: "100%",margin:"5px",backgroundColor:"grey",textAlign:"center"}}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}aria-controls="panel1a-content" style={{borderBottom:"1px solid #6c4e25" ,textAlign:"center"}}>
       
             <h4>{res.name}</h4>
         
