@@ -61,6 +61,7 @@ import { Fade, Slide } from "react-awesome-reveal";
 import MgmTimber from "../components/locationDetail/MgmTimber";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import { ClimbingBoxLoader } from "react-spinners";
+import { regionNames} from "../../sites-global/global";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -88,6 +89,9 @@ export const config: TemplateConfig = {
       "c_faqrelation.answer",
       "c_servicesss",
       "c_aboutus",
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
+      "dm_directoryParents.meta.entityType"
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -108,22 +112,22 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  // var url = "";
-  // var name: any = document.name.toLowerCase();
-  // var string: any = name.toString();;
-  // let result: any = string.replaceAll(" ", "-");
-  // document.dm_directoryParents.map((result: any, i: Number) => {
-  //   if (i > 0) {
-  //     url += result.slug + "/"
-  //   }
-  // })
-  // if (!document.slug) {
-  //   url += `${result}.html`;
-  // } else {
-  //   url += `${document.slug.toString()}.html`;
-  // }
+  var url = "";
+  var name: any = document.name.toLowerCase();
+  var string: any = name.toString();;
+  let result: any = string.replaceAll(" ", "-");
+  document.dm_directoryParents.map((result: any, i: Number) => {
+    if (i > 0) {
+      url += result.slug + "/"
+    }
+  })
+  if (!document.slug) {
+    url += `${result}.html`;
+  } else {
+    url += `${document.slug.toString()}.html`;
+  }
 
-  return document.id;
+  return `${document.id}.html`;
 };
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
@@ -299,6 +303,7 @@ const Location: Template<ExternalApiRenderData> = ({
 
     c_servicesss,
     c_aboutus,
+    dm_directoryParents,
   } = document;
 console.log("externalApiData",externalApiData)
   let templateData = { document: document, __meta: __meta };
@@ -474,6 +479,12 @@ console.log("externalApiData",externalApiData)
           {/* {images} */}
        
           <PageLayout global={_site}>
+          <BreadCrumbs
+          name={name}
+          address={address}
+          parents={dm_directoryParents}
+          baseUrl={relativePrefixToRoot}
+        ></BreadCrumbs>
             <div className="container">
               <div className="banner-text banner-dark-bg justify-center text-center">
                 <h1 className=""> {name}</h1>

@@ -266,7 +266,7 @@ const City: Template<TemplateRenderProps> = ({
     if (!entity.slug) {
       url = `/${entity.id}-${result}.html`;
     } else {
-      url = `/${entity.slug.toString()}`;
+      url = `/${entity.slug.toString()}.html`;
     }
 
 
