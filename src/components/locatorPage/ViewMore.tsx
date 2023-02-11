@@ -23,7 +23,7 @@ export default function ViewMore(props: viewMoreProps): JSX.Element | null {
   if (maxPageCount <= 1) {
     return null;
   }
-  const pageNumber = (offset / limit) + 1;
+  const pageNumber = (offset / limit) +1;
   
   return (
     <>

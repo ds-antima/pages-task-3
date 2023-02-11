@@ -477,20 +477,22 @@ function UnwrappedGoogleMaps({
     info = true;
     let url = "";
 
-    // const name: any = result.rawData.name?.toLowerCase();
-    // const region: any = result.rawData.address.region?.toLowerCase();
-    // const initialregion: any = region.toString();
-    // const finalregion: any = initialregion.replaceAll(" ", "-");
-    // const city: any = result.rawData.address.city?.toLowerCase();
-    // const initialrcity: any = city.toString();
-    // const finalcity: any = initialrcity.replaceAll(" ", "-");
-    // const string1: any = name.toString();
-    // const result1: any = string1.replaceAll(" ", "-");
-    // if (!result.rawData.slug) {
-    //   url = `${result.rawData.id}-${result1}.html`;
-    // } else {
-    //   url = `${result.rawData.slug.toString()}.html`;
-    // }
+    const name: any = result.rawData.name?.toLowerCase();
+    const country:any = result.rawData.address.countryCode?.toLowerCase();
+    const region: any = result.rawData.address.region?.toLowerCase();
+    const initialregion: any = region.toString();
+    const finalregion: any = initialregion.replaceAll(" ", "-");
+    const city: any = result.rawData.address.city?.toLowerCase();
+    const initialrcity: any = city.toString();
+    const finalcity: any = initialrcity.replaceAll(" ", "-");
+    const string1: any = name.toString();
+    const result1: any = string1.replaceAll(" ", "-");
+    let url1:any = country+"/"+finalregion+"/"+finalcity+"/"+result.rawData.slug+".html";
+    if (!result.rawData.slug) {
+      url = `${result.rawData.id}-${result1}.html`;
+    } else {
+      url = `${url1}.html`;
+    }
 
     const MarkerContent = (
       <>
@@ -500,7 +502,7 @@ function UnwrappedGoogleMaps({
             {/* <div className="icon"> <img className=" " src={mapimage} width="20" height="20"
         alt="" /></div> */}
             <h2>
-              <a className="inline-block notHighlight" href={`/${result.rawData.id}`}>
+              <a className="inline-block notHighlight" href={`${url1}`}>
                 {result.rawData.name}
               </a>
             </h2>
@@ -561,7 +563,7 @@ function UnwrappedGoogleMaps({
           )}
         </div>
         <div className="button-bx !ml-4 !mb-0">
-          <a type="button" href={`/${result.rawData.id}`} className="btn">
+          <a type="button" href={`${url1}`} className="btn">
             {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
             {StaticData.StoreDetailbtn}
           </a>

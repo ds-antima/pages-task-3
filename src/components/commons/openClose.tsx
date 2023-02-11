@@ -202,7 +202,7 @@ export const OpenStausFunctions = {
            
             <div className="hours-info ">
               {" "}
-              <span className="font-second-main-font "> Open now - </span>
+              <span className="font-second-main-font " style={{color:"#239b56"}}> Open now - </span>
               <span className="lowercase">
                 {OpenStausFunctions.formatTime(currentInterval.start).replace(
                   ":00",

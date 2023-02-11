@@ -9,7 +9,7 @@ const Address = (props: any) => {
 
   return (
     <>
-      <div className="address notHighlight ">
+      <div className="address notHighlight " style={{color:" #5499c7 "}}>
         {/* <a href={gmapsLink} target="_blank" className="hover:underline"> */}
             <div >{address.line1}</div>
             {address.line2 && (<div><span className="notHighlight">{address.line2}</span></div>)}

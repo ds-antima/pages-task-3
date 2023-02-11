@@ -127,7 +127,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
     url += `${document.slug.toString()}.html`;
   }
 
-  return `${document.id}.html`;
+  return url;
 };
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
@@ -568,7 +568,7 @@ console.log("externalApiData",externalApiData)
             <button type="button" className="btn btn-primary">
           <a  href ={c_aboutus?.viewMore?.link} style={{color:"blue"}}><br/>{c_aboutus.viewMore.label}</a>
           </button></div> */}
-                    <p>
+                    <p style={{textAlign:"center" , margin :"30px"}}>
                       <a
                         href={c_aboutus?.viewMore?.link}
                         style={{ margin: "auto" }}
