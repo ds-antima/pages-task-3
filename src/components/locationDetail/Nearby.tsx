@@ -46,25 +46,23 @@ export default function Nearby(props: any) {
       > */}
         {neabyData?.entities.map((location: any, index: Number) => {
 
-          let url = "";
-          var name: any = location.name?.toLowerCase();
-          var count: any =location.address.countryCode?.toLocaleLowerCase();
-
-          var region: any = location.address.region?.toLowerCase();
-          var initialregion: any = region.toString();
-          var finalregion: any = initialregion.replaceAll(" ", "-");
-          var city: any = location.address.city?.toLowerCase();
-          var initialrcity: any = city.toString();
-          var finalcity: any = initialrcity.replaceAll(" ", "-");
-          var string: any = name.toString();
-          let result1: any = string.replaceAll(" ", "-");
-          let url1:any = count+"/"+finalregion+"/"+finalcity+"/"+location.slug+".html";
-
-          if (!location.slug) {
-            url = `/${location.id}-${result1}.html`;
-          } else {
-            url = `/${url1}`;
-          }
+let url = "";
+var name: any = location.name?.toLowerCase();
+var country:any=location.address.countryCode?.toLowerCase();
+var region: any = location.address.region?.toLowerCase();
+var initialregion: any = region.toString();
+var finalregion: any = initialregion.replaceAll(" ", "-");
+var city: any = location.address.city?.toLowerCase();
+var initialrcity: any = city.toString();
+var finalcity: any = initialrcity.replaceAll(" ", "-");
+var string: any = name.toString();
+let result1: any = string.replaceAll(" ", "-");
+let url1:any = country+"/"+finalregion+"/"+finalcity+"/"+location.slug+".html";
+if (!location.slug) {
+  url = `/${location.id}-${result1}.html`;
+} else {
+  url = `/${url1}`;
+}
       
           if (index > 0) {
             return (
@@ -72,7 +70,7 @@ export default function Nearby(props: any) {
                 {/* <SplideSlide key={index}> */}
                   <div className="nearby-card">
                     <div className="location-name-miles icon-row">
-                      <h2><Link className="inline-block notHighlight" href={`${url1}`}
+                      <h2><Link className="inline-block notHighlight" href={`/${url1}`}
                         data-ya-track={`${location.name}`}
                         eventName={`${location.name}`}
                         rel="noopener noreferrer">{location.name}</Link></h2>
@@ -97,7 +95,7 @@ export default function Nearby(props: any) {
                     }
                     </div> 
                     <div className="button-bx">
-                      <Link className="btn" href={`${url1}`}
+                      <Link className="btn" href={`/${url1}`}
                        data-ya-track={`viewstore-${location.name}`}
                        eventName={`viewstore-${location.name}`}
                        rel="noopener noreferrer">

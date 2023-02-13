@@ -53,6 +53,7 @@ function opentime(e: any) {
 
  if (!result.rawData.slug) {
    url= `/${result.rawData.id}-${result1}.html`;
+   
  } else {
    url= `/${url1}`;
  }
