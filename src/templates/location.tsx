@@ -61,7 +61,7 @@ import { Fade, Slide } from "react-awesome-reveal";
 import MgmTimber from "../components/locationDetail/MgmTimber";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import { ClimbingBoxLoader } from "react-spinners";
-import { regionNames} from "../../sites-global/global";
+import { regionNames } from "../../sites-global/global";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -91,7 +91,7 @@ export const config: TemplateConfig = {
       "c_aboutus",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
-      "dm_directoryParents.meta.entityType"
+      "dm_directoryParents.meta.entityType",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -114,13 +114,13 @@ export const config: TemplateConfig = {
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   var url = "";
   var name: any = document.name.toLowerCase();
-  var string: any = name.toString();;
+  var string: any = name.toString();
   let result: any = string.replaceAll(" ", "-");
   document.dm_directoryParents.map((result: any, i: Number) => {
     if (i > 0) {
-      url += result.slug + "/"
+      url += result.slug + "/";
     }
-  })
+  });
   if (!document.slug) {
     url += `${result}.html`;
   } else {
@@ -262,12 +262,12 @@ export const transformProps: TransformProps<ExternalApiData> = async (
       : data.document.displayCoordinate.longitude
   }`;
 
-  const url = "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?api_key=ae1f0a5b0056b4aaae9bdf3238d19bf9&v=20230110&location=India&radius=2500&limit=3&offset=0";
+  const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500&location=${data.document.yextDisplayCoordinate.latitude},${data.document.yextDisplayCoordinate.longitude}&api_key=ae1f0a5b0056b4aaae9bdf3238d19bf9&v=20181201&resolvePlaceholders=true&entityTypes=location&limit=4`;
   console.log(url);
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
   )) as nearByLocation;
-  console.log(externalApiData,"externalApiData")
+  console.log(externalApiData, "externalApiData");
   return { ...data, externalApiData };
 };
 
@@ -305,7 +305,7 @@ const Location: Template<ExternalApiRenderData> = ({
     c_aboutus,
     dm_directoryParents,
   } = document;
-console.log("externalApiData",externalApiData)
+  console.log("externalApiData", externalApiData);
   let templateData = { document: document, __meta: __meta };
   let hoursSchema = [];
   let breadcrumbScheme = [];
@@ -477,14 +477,14 @@ console.log("externalApiData",externalApiData)
           <Header1 _site={_site} />
           {/* <Banner banners={c_banner}/> */}
           {/* {images} */}
-       
+
           <PageLayout global={_site}>
-          <BreadCrumbs
-          name={name}
-          address={address}
-          parents={dm_directoryParents}
-          baseUrl={relativePrefixToRoot}
-        ></BreadCrumbs>
+            <BreadCrumbs
+              name={name}
+              address={address}
+              parents={dm_directoryParents}
+              baseUrl={relativePrefixToRoot}
+            ></BreadCrumbs>
             <div className="container">
               <div className="banner-text banner-dark-bg justify-center text-center">
                 <h1 className=""> {name}</h1>
@@ -568,7 +568,7 @@ console.log("externalApiData",externalApiData)
             <button type="button" className="btn btn-primary">
           <a  href ={c_aboutus?.viewMore?.link} style={{color:"blue"}}><br/>{c_aboutus.viewMore.label}</a>
           </button></div> */}
-                    <p style={{textAlign:"center" , margin :"30px"}}>
+                    <p style={{ textAlign: "center", margin: "30px" }}>
                       <a
                         href={c_aboutus?.viewMore?.link}
                         style={{ margin: "auto" }}
@@ -581,7 +581,7 @@ console.log("externalApiData",externalApiData)
                             backgroundColor: "black",
                             padding: "18px",
                             border: "yellow",
-                          //  border: "2px solid #f1d7b1",
+                            //  border: "2px solid #f1d7b1",
                             borderRadius: "10px",
                             margin: "10px",
                             marginLeft: "60px",

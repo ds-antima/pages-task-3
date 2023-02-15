@@ -52,27 +52,36 @@
 // };
 
 // export default Header;
-import * as React from "react"
-export default function Header1(props:any){
-    console.log(props._site,"_sfcsgsf")
+import * as React from "react";
+export default function Header1(props: any) {
+  console.log(props._site, "_sfcsgsf");
 
-return(
+  return (
     <>
-    <div className="flex flex-row" style={{width:"1500px",backgroundColor:"black",color:"white",padding: "21px"}}>
-    {props._site.c_header.map((res:any)=>{
-        return(
+      <div
+        className="flex flex-row"
+        style={{
+          width: "1500px",
+          backgroundColor: "black",
+          color: "white",
+          padding: "21px",
+        }}
+      >
+        {props._site.c_header.map((res: any) => {
+          return (
             <>
-            <div style={{width:"400px", margin:"45px" }}>
-            <ul>
-              <a href={res.link}>{res.label}</a>
-            </ul>
-            </div>
+              <div style={{ width: "400px", margin: "45px" }}>
+                <ul>
+                  <a href={res.link}>{res.label}</a>
+                </ul>
+              </div>
             </>
-            )
+          );
         })}
-        <a className="logo" href="\" style={{width:"550px"}}>
-        <img src={props._site.c_headerphoto.url}/></a>
-        </div>
+        <a className="logo" href="\" style={{ width: "550px" }}>
+          <img src={props._site.c_headerphoto.url} />
+        </a>
+      </div>
     </>
-)
+  );
 }
