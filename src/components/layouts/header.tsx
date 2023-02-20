@@ -61,16 +61,16 @@ export default function Header1(props: any) {
       <div
         className="flex flex-row"
         style={{
-          width: "1500px",
-          backgroundColor: "black",
+          width: "1506px",
+          backgroundColor: "#2F4F4F",
           color: "white",
-          padding: "21px",
+          padding: "30px",
         }}
       >
         {props._site.c_header.map((res: any) => {
           return (
             <>
-              <div style={{ width: "400px", margin: "45px" }}>
+              <div style={{ width: "250px", margin: "10px" ,padding:"50px"}}>
                 <ul>
                   <a href={res.link}>{res.label}</a>
                 </ul>
@@ -78,7 +78,7 @@ export default function Header1(props: any) {
             </>
           );
         })}
-        <a className="logo" href="\" style={{ width: "550px" }}>
+        <a className="logo" href="\" style={{ width: "286px",padding:"5px"}}>
           <img src={props._site.c_headerphoto.url} />
         </a>
       </div>

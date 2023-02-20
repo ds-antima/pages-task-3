@@ -211,7 +211,7 @@ const Locator: Template<TemplateRenderProps>= ({
           <SearchLayout _site={_site}/>
      
         </SearchHeadlessProvider>
-        <Footer siteData={_site.c_footerServices}/>
+        <Footer _site={_site}/>
       
    
       </PageLayout>

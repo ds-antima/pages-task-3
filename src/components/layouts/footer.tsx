@@ -6,7 +6,7 @@ import "../../index.css";
 // import twitter from "../../images/twitter.svg";
 // import youtube from "../../images/youtube.svg";
 // import printest from "../../images/printest.svg";
-import { cookieText, cookiesUrl } from "../../../sites-global/global"
+import { cookieText, cookiesUrl } from "../../../sites-global/global";
 import CookieConsent from "react-cookie-consent";
 import { StaticData } from "../../../sites-global/staticData";
 import { useEffect, useState } from "react";
@@ -38,7 +38,6 @@ import Link from "../commons/Link";
 // 	// 	mediaQuery = window?.innerWidth;
 // 	// }
 
-
 // 	return (
 // 		<>
 
@@ -63,7 +62,6 @@ import Link from "../commons/Link";
 // 							)
 // 						})}
 
-
 // 						<div className="store-inner flex flex-raw">
 // 							<div>
 // 							<img src={footer.c_fAQs.icon.url} alt="faq-icon" />
@@ -77,15 +75,8 @@ import Link from "../commons/Link";
 // 							<Link props={footer.c_getAQuate.cTA} />
 // 							</div>
 // 						</div>
-						
-
-						
-
-
-
 
 // 					</div>
-					
 
 // 					<div className="link-sec-footer ">
 // 					{footer.c_customer_services?
@@ -139,7 +130,6 @@ import Link from "../commons/Link";
 // 						<span className="text-xs flex-wrap" data-copyright="">
 // 							{footer.c_footerDescription}</span>
 
-						
 // 					</div>
 
 // 				</div>
@@ -168,29 +158,82 @@ import Link from "../commons/Link";
 // function handleMediaQueryChange(mediaQuery: MediaQueryList) {
 // 	throw new Error("Function not implemented.");
 // }
-function Footer(props:any){
-    const {siteData}=props
- return(
+// function Footer(props:any){
+//     const {siteData}=props
+//  return(
+//     <>
+//     <div className="flex" style={{height:"200px",margin:"1px",padding:"40px", backgroundColor:"black" , color:"white"}}>
+//    {siteData.map((res:any)=>{
+//         return(
+//             <>
+// 			<div style={{width:"650px", margin:"20px"}}>
+//             <ul>
+
+//                 <a href ={res.link}><br/>{res.label}</a>
+//             </ul>
+// 			</div>
+
+//             </>
+//         )
+//     })}
+
+//     </div>
+//    <div>
+
+//    </div>
+//     </>
+//  )
+// }
+// export default Footer;
+export default function Footer(props: any) {
+  console.log(props._site, "_sfcsgsf");
+
+  return (
     <>
-    <div className="flex" style={{width:"1500px" ,height:"200px",margin:"1px",padding:"40px", backgroundColor:"black" , color:"white"}}>
-   {siteData.map((res:any)=>{
-        return(
+      <div
+        className="flex"
+        style={{
+          height:"200px",
+          backgroundColor: "#2F4F4F",
+          color: "white",
+          padding: "10px",
+         
+        }}
+      >
+        {props._site.c_footerServices?.map((res: any) => {
+          return (
             <>
-			<div style={{width:"650px", margin:"20px"}}>
-            <ul>
-
-                <a href ={res.link}><br/>{res.label}</a>
-            </ul>
-			</div>
+              <div style={{ margin: "10px", padding: "29px" }}>
+                <ul>
+                  <a href={res.link}>{res.label}</a>
+                </ul>
+              </div>
+              
             </>
-        )
-    })}
-    </div>
-   <div>
-    
-
-   </div>
+          );
+        })}
+        <br />
+         <div style={{display:"flex-flex coloumn",height:"10px"}}>
+          {props._site.c_social1?.map((img: any) => {
+            return(<>
+          
+          <a href=""><img style = {{borderRadius:"100%" , height:"20px"}}  src={img.image.image.url}/></a>
+            {img.iconname?.map((res1:any)=>{
+              return(
+                <>
+                {res1.label}
+                </>
+              )
+            })}
+            </>)
+          })}
+        </div>
+        
+        
+        
+      </div>
+     
+      
     </>
- )
+  );
 }
-export default Footer;

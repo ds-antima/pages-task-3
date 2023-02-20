@@ -3,9 +3,9 @@ import ApiCall from "../../Apis/ApiCall";
 import Address from "../commons/Address";
 import GetDirection from "../commons/GetDirection";
 import OpenClose from "../commons/openClose";
-import timesvg from "../../images/watch-icn.svg";
-import mapimage from "../../images/map.svg";
-import Phonesvg from "../../images/phone.svg";
+// import timesvg from "../../images/watch-icn.svg";
+// import mapimage from "../../images/map.svg";
+// import Phonesvg from "../../images/phone.svg";
 import {
   Addresssvg,
   mobilesvg,
@@ -20,10 +20,12 @@ export default function Nearby(props: any) {
     props.externalApiData.response
   );
   console.log(neabyData,"green")
-  const metersToMiles = (meters: number) => {
-    const miles = meters * 0.000621371;
+  const metersToMiles = (km: number) => {
+    const miles = km * 0.000621371;
     return miles.toFixed(2);
   };
+
+
 
   return (
     <>
@@ -97,8 +99,16 @@ export default function Nearby(props: any) {
                 </div>
 
                 <div className="distance">
-                  {metersToMiles(location.distance)}
-                  <span>{StaticData.miles}</span>
+                {neabyData.distances.map((g:any)=>{
+                  if(g.id==location.meta.id){
+                    return(
+                      <>
+                      {/* {metersToMiles(g.distanceMiles)} */}
+                     {g.distanceMiles.toFixed([2])}miles
+                      </>
+                    )
+                  }
+                })}
                 
                 </div>
                 <div className="icon-row content-col">
@@ -140,7 +150,7 @@ export default function Nearby(props: any) {
                   )}
                 </div>
                 <div className="button-bx">
-                  <Link
+                  <Link style={{background:"#2F4F4F"}}
                     className="btn"
                     href={`/${url1}`}
                     data-ya-track={`viewstore-${location.name}`}

@@ -72,10 +72,10 @@ return(
         return(
             <>
             
-            <div style={{width:"100%",textAlign:"center"}}>
+            <div style={{textAlign:"center"}}>
               
       
-      <Accordion style={{ width: "100%",margin:"5px",backgroundColor:"grey",textAlign:"center"}}>
+      <Accordion style={{margin:"5px",color:"white",backgroundColor:"#2F4F4F",textAlign:"center"}}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}aria-controls="panel1a-content" style={{borderBottom:"1px solid #6c4e25" ,textAlign:"center"}}>
       
             <h4>{res.name}</h4>

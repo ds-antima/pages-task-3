@@ -9,7 +9,8 @@
     "c_header",
     "c_footerServices",
     "c_headerphoto",
-    "c_headerbanner"
+    "c_headerbanner",
+    "c_social1"
   ],
   "localization": {
     "locales": ["en"],

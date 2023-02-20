@@ -89,6 +89,7 @@ export const config: TemplateConfig = {
       "c_faqrelation.answer",
       "c_servicesss",
       "c_aboutus",
+      "c_social1",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
       "dm_directoryParents.meta.entityType",
@@ -300,7 +301,7 @@ const Location: Template<ExternalApiRenderData> = ({
     name,
     c_banner,
     c_faqrelation,
-
+    c_socialicons,
     c_servicesss,
     c_aboutus,
     dm_directoryParents,
@@ -559,15 +560,11 @@ const Location: Template<ExternalApiRenderData> = ({
                 <div style={{ width: "900px" }}>
                   <img src={c_aboutus?.photo?.url} alt="" />
                 </div>
-                {/* <div>{c_aboutus.viewMore.label.link}
-        </divstyle={{</p>}}> */}
+               
                 <p>
                   <div style={{ margin: "20px", padding: "10px" }}>
                     {c_aboutus.descript}
-                    {/* <div>
-            <button type="button" className="btn btn-primary">
-          <a  href ={c_aboutus?.viewMore?.link} style={{color:"blue"}}><br/>{c_aboutus.viewMore.label}</a>
-          </button></div> */}
+                    
                     <p style={{ textAlign: "center", margin: "30px" }}>
                       <a
                         href={c_aboutus?.viewMore?.link}
@@ -578,7 +575,7 @@ const Location: Template<ExternalApiRenderData> = ({
                           style={{
                             justifyContent: "center",
                             color: "white",
-                            backgroundColor: "black",
+                            backgroundColor: "#2F4F4F",
                             padding: "18px",
                             border: "yellow",
                             //  border: "2px solid #f1d7b1",
@@ -599,7 +596,7 @@ const Location: Template<ExternalApiRenderData> = ({
             <Faq faq={c_faqrelation} />
             <Servicess service={c_servicesss} />
 
-            <Footer siteData={_site.c_footerServices} />
+            <Footer _site={_site} />
           </PageLayout>
         </AnalyticsScopeProvider>
       </AnalyticsProvider>

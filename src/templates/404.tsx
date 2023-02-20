@@ -11,6 +11,8 @@ import * as React from "react";
 import { favicon } from "../../sites-global/global";
 import { StaticData } from "../../sites-global/staticData";
 import PageLayout from "../components/layouts/PageLayout";
+import Header1 from "../components/layouts/header";
+import Footer from "../components/layouts/footer";
 export const config: TemplateConfig = {
   stream: {
     $id: "404",
@@ -22,11 +24,11 @@ export const config: TemplateConfig = {
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
-      entityIds: ["global-data"]
+      entityIds: ["globaldata"]
     },
     // The entity language profiles that documents will be generated for.
     localization: {
-      locales: ["en_GB"],
+      locales: ["en"],
       primary: false,
     },
   },
@@ -62,6 +64,7 @@ const FourOhFour: Template<TemplateRenderProps> = ({
   } = document;
   return (
     <>
+      <Header1 _site={_site} />
       <PageLayout global={_site}>
         <div className="content-list">
           <div className="container">
@@ -81,6 +84,7 @@ const FourOhFour: Template<TemplateRenderProps> = ({
           </div>
         </div>
       </PageLayout>
+      <Footer _site={_site} />
     </>
   );
 };

@@ -17,8 +17,9 @@ const useFetchResults = () => {
   if(locationResults.length > 0){
     for (let i = 0; i < locationResults.length; i++) {
       const location = locationResults[i];
-      // console.log('location',location.id);
+       console.log('location',location.id);
       let pushStatus = true;
+        console.log('pushstatus',pushStatus);
       if(mapLocations.length > 0){
         for (let m = 0; m < mapLocations.length; m++) {
           const existLocation = mapLocations[m];
@@ -26,7 +27,7 @@ const useFetchResults = () => {
             pushStatus = false;
           }
         }
-      }
+      } 
       if(pushStatus){
          mapLocations.push(location);
       }    

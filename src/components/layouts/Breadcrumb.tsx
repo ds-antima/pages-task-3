@@ -79,9 +79,9 @@ const BreadCrumbs = (props: data) => {
     }
   };
   return (
-    <div className="breadcrumb">
+    <div className="breadcrumb" style={{background:"2F4F4F"}}>
       <div className="container mx-auto">
-        <ul className="flex">
+        <ul className="flex" >
           <li>
             <Link className="home" href="/"
              data-ya-track="Breadcrumbs"
