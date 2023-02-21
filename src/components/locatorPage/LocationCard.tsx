@@ -121,7 +121,7 @@ function opentime(e: any) {
              <div className="button-bx">
               <Link type="button" href={`${url1}`} className=" btn notHighlight "
               data-ya-track={`viewStore -${result.rawData.name}`}
-              eventName={`viewStore -${result.rawData.name}`}
+              eventName={`viewStore -${result.rawData.name}`}style={{background:"#2F4F4F"}}
               rel="noopener noreferrer"
               >
                 {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
