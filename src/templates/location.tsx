@@ -535,22 +535,7 @@ const Location: Template<ExternalApiRenderData> = ({
               )}
             </div>
 
-            <div className="nearby-sec">
-              <div className="container">
-                <div className="sec-title">
-                  <h2 className="">{StaticData.NearStoretext}</h2>
-                </div>
-                <div className="nearby-sec-inner">
-                  {yextDisplayCoordinate ||
-                  cityCoordinate ||
-                  displayCoordinate ? (
-                    <Nearby externalApiData={externalApiData} />
-                  ) : (
-                    ""
-                  )}
-                </div>
-              </div>
-            </div>
+            
 
             <div className="">
               <h1 style={{ textAlign: "center", fontSize: "1.75rem" }}>
@@ -592,9 +577,25 @@ const Location: Template<ExternalApiRenderData> = ({
                 </p>
               </p>
             </div>
-
-            <Faq faq={c_faqrelation} />
             <Servicess service={c_servicesss} />
+            <Faq faq={c_faqrelation} />
+            
+            <div className="nearby-sec">
+              <div className="container">
+                <div className="sec-title">
+                  <h2 className="">{StaticData.NearStoretext}</h2>
+                </div>
+                <div className="nearby-sec-inner">
+                  {yextDisplayCoordinate ||
+                  cityCoordinate ||
+                  displayCoordinate ? (
+                    <Nearby externalApiData={externalApiData} />
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </div>
+            </div>
 
             <Footer _site={_site} />
           </PageLayout>

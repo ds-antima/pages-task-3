@@ -358,7 +358,7 @@ export const OpenStausFunctions = {
     return tempDate.toLocaleTimeString(localeString.replace("_", "-"), {
       hour: "numeric",
       minute: "numeric",
-      hour12: true,
+      hour12: false,
     });
   },
   getUtcOffsetFromTimeZone: (timeZone, date = new Date()) => {

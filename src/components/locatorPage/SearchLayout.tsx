@@ -80,8 +80,8 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
       );
     }
     params1 = {
-      latitude: 27.391277,
-      longitude: 73.432617,
+      latitude: 26.9124,
+      longitude:75.7873,
     };
     SetNewparam(params1);
     // mapzoom=8;
