@@ -193,7 +193,7 @@ export default function Footer(props: any) {
       <div
         className="flex"
         style={{
-          height:"200px",
+          height:"172px",
           backgroundColor: "#2F4F4F",
           color: "white",
           padding: "10px",

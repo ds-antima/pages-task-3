@@ -82,11 +82,12 @@ export default function Faq(props: any) {
                     backgroundColor: "#2F4F4F",
                     textAlign: "center",
                     weight:"98%"
+                   
                   }}>
                   <AccordionHeader onClick={() => handleOpen(index + 1)}>
-                  <h4>{res.name}</h4>
+                  <h4 style={{fontSize:"1.05rem"}}>{res.name}</h4>
                   </AccordionHeader>
-                  <AccordionBody style={{ backgroundColor: "grey" }}>{res.answer}</AccordionBody>
+                  <AccordionBody style={{ backgroundColor: "grey" ,  fontSize:"1.05rem"}}>{res.answer}</AccordionBody>
                 </Accordion>
            
            

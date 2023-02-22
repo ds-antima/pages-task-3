@@ -655,10 +655,10 @@ nav[aria-label="Pagination"] button:disabled {
   @apply mt-2 md:mt-0 w-auto hover:no-underline;
 }
 .nearby-card .button-bx .btn:hover svg {
-  @apply !fill-red;
+  @apply !fill-white;
 }
 .map-section .button-bx .btn {
-  @apply w-[11.25rem] md:w-[9.25rem] lg:w-[11.25rem]  bg-black hover:bg-hover-btn font-second-main-font  border-none text-white;
+  @apply w-[11.25rem] md:w-[9.25rem] lg:w-[11.25rem]  bg-[#2F4F4F] hover:bg-hover-btn font-second-main-font  border-none text-white;
 }
 .map-section .button-bx .btn.notHighligh {
   @apply w-full md:w-[48%] bg-white justify-start  border-none text-black underline;
@@ -667,7 +667,7 @@ nav[aria-label="Pagination"] button:disabled {
   @apply mt-2 md:mt-0 w-auto ml-2 hover:no-underline;
 }
 .map-section .button-bx .btn:hover svg {
-  @apply !fill-red;
+  @apply !fill-black;
 }
 
 .nearby-card .green-dot svg,
@@ -794,7 +794,7 @@ nav[aria-label="Pagination"] button:disabled {
   @apply mt-6;
 }
 .direction-button a {
-  @apply !bg-black !text-white  !border-button-light hover:!border-transparent !border-2;
+  @apply !bg-[#2F4F4F] !text-white  !border-button-light hover:!border-transparent !border-2;
 }
 .direction-button .btn:hover svg {
   @apply !fill-red;
@@ -1020,6 +1020,7 @@ nav[aria-label="Pagination"] button:disabled {
 }
 .view-more {
   @apply text-center mt-5;
+
 }
 
 /* near by */
@@ -1455,4 +1456,10 @@ nav[aria-label="Pagination"] button:disabled {
   .storelocation-openCloseTime table.day-hrs .currentDay .dayName .checked {
     @apply left-1;
   }
+}
+.active.daylist{ @apply  !block pl-[50px]}
+.OpenCloseStatus .daylist{@apply hidden}
+
+.button-bx .btn:hover{
+  background-color: #2F4F4F;
 }

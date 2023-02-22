@@ -65,6 +65,7 @@ export default function Header1(props: any) {
           backgroundColor: "#2F4F4F",
           color: "white",
           padding: "30px",
+          height:"194px"
         }}
       >
         {props._site.c_header.map((res: any) => {

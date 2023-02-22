@@ -360,8 +360,8 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
                <div className="browse-dir">
                <a className="underline " href='/gb.html'>Use the search above or <span className="font-second-main-font"> browse our directory</span></a> 
                </div>:''}
-                <div className="button-bx">
-               <ViewMore  className={" btn notHighlight lg:!w-[132%] !mb-2 button view-more"} idName={"view-more-button"} buttonLabel={"View More"} />
+                <div className="button-bx" style={{background:"#2F4F4F"}}>
+               <ViewMore  className={" btn notHighlight lg:!w-[132%] !mb-2 button view-more "} idName={"view-more-button"} buttonLabel={"View More"}  />
                </div>
             </div>
           </PerfectScrollbar>

@@ -9,6 +9,9 @@ import OpenClose from "../commons/openClose";
 import { StaticData } from "../../../sites-global/staticData";
 import { Link } from "@yext/pages/components";
 import Servicess from "../locationDetail/services";
+import { useEffect, useRef, useState } from 'react';
+import Hours from "../commons/hours";
+
 
 
 const metersToMiles = (meters: number) => {
@@ -20,6 +23,17 @@ let array = [];
 
 
 const LocationCard: CardComponent<Location> = ({result}) => {
+
+  const [timeStatus, setTimeStatus] = useState("");
+  const onOpenHide = () => {
+    if (timeStatus == "") {
+      setTimeStatus("active");
+    } else {
+      setTimeStatus("");
+    }
+  }
+
+
 
   let url = "";
   const[hoursopen,setHoursopen]=React.useState(false);
@@ -36,8 +50,8 @@ function opentime(e: any) {
     setHoursopen(false);
   }
 }
-
-    const { address } = result.rawData;
+const { address, hours, additionalHoursText,timezone } = result.rawData;
+    //const { address } = result.rawData;
   var name: any = result.rawData.name?.toLowerCase();
   var count: any =result.rawData.address.countryCode?.toLocaleLowerCase();
   var region: any = result.rawData.address.region?.toLowerCase();
@@ -79,43 +93,43 @@ function opentime(e: any) {
                 : ''}
             </div>
 
-            
-            <div className="icon-row content-col address-with-availablity notHighlight" style={{color:"brown"}}>
-              <Address address={address} />
-              {result.rawData.hours ? <>
-              <div className="mt-2">
-              {/* <h6>Opening Hours</h6> */}
-                {result.rawData.hours?.reopenDate ? <>
-                  <div className="icon"> <img className=" " src={timesvg} width="20" height="20" alt="" /> </div>
-                  <div className=" flex open-now-string items-center " data-id={`main-shop-${result.rawData.id}`} onClick={opentime}>
-                    {StaticData.tempClosed}
-                  </div>
-                </>
-                  : <> 
-                    <div className=" flex open-now-string items-center" data-id={`main-shop-${result.rawData.id}`} >
-                      <OpenClose timezone={result.rawData.timezone} hours={result.rawData.hours} deliveryHours={result.rawData.hours}></OpenClose>
-                    </div></>}
+            <div className="icon-row content-col address-with-availablity notHighlight">
+              <h3><Address address={address} /></h3>
+              <div className="open-close ">
+          <div className="hours-sec onhighLight">
+            <div className="OpenCloseStatus ">
+              <div className="hours-labels">
+                <span className="icon"></span>
+                 <div className="flex" onClick={onOpenHide}>
+                 <OpenClose
+                    timezone={timezone}
+                    hours={hours}
+                    deliveryHours={hours}
+                  ></OpenClose>
+                 <button><svg className="mt-2" xmlns="http://www.w3.org/2000/svg" width="19.585" height="7.793" viewBox="0 0 9.585 4.793">
+                  <path id="hrd-drop" d="M9,13.5l4.793,4.793L18.585,13.5Z" transform="translate(-9 -13.5)" fill="#00363f"></path>
+                 </svg></button>
+                 </div>
 
-
-                {/* <div className={`storelocation-openCloseTime  capitalize hidden`}>
-                    {hoursopen?
-                   typeof result.rawData.hours === "undefined" ? ("") :
-                     <Hours key={result.rawData.name} additionalHoursText={result.rawData.additionalHoursText} hours={result.rawData.hours} c_specific_day={result.rawData.c_specific_day} />
-                   :''}
-                </div> */}
-              </div></> : <div className="closeddot notHighlight red-dot">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
-           <circle id="Ellipse_5" data-name="Ellipse 5" cx="4" cy="4" r="4" fill="#ad1e1f"/>
-         </svg>
-         
-                   <div className="hours-info text-lg font-second-main-font closeddot"> 
-                   Closed
-                   </div>
-                   </div>}
-                   
-
+              </div>
+              <div className={timeStatus + " daylist"} >
+                <Hours key={result.rawData.id}  hours={hours} additionalHoursText={additionalHoursText} /></div>
             </div>
-            
+
+          </div>
+        </div>
+        </div>
+            {/* <div style={{marginLeft:"25px"}}><h3>Services</h3>
+            <div>
+           {result.rawData.c_servicesdata&&result.rawData.c_servicesdata.map((server:any)=>{
+            return( 
+
+              <pre>{server.label?(<a href="#"><h6>{server.label}</h6></a>):("")}</pre>     
+               
+           )
+           })}
+           </div>
+           </div> */}
               
          
              <div className="button-bx">
