@@ -197,6 +197,7 @@ export default function Footer(props: any) {
           backgroundColor: "#2F4F4F",
           color: "white",
           padding: "10px",
+          width:"100%"
          
         }}
       >

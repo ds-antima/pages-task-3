@@ -61,7 +61,7 @@ export default function Header1(props: any) {
       <div
         className="flex flex-row"
         style={{
-          width: "1506px",
+          width: "100%",
           backgroundColor: "#2F4F4F",
           color: "white",
           padding: "30px",
